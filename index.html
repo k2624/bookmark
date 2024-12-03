@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmark</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Sans+Caption:wght@400;700&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Sans+Caption:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="py-5 position-relative">
+      <div
+        class="container d-flex flex-column justify-content-center align-items-center position-relative"
+      >
+        <h1 class="text-center py-2 position-relative">Bookmarker</h1>
+
+        <div
+          class="bookmark-inputs w-100 p-3 py-4 mt-5 d-flex flex-column justify-content-center align-items-center gap-4"
+        >
+          <h2>
+            <i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites
+            <i class="fa-solid fa-bookmark"></i>
+          </h2>
+          <div
+            class="name d-flex flex-column flex-column justify-content-center w-100"
+          >
+            <label for="bookName" class="pb-2 fw-semibold"
+              ><h6>
+                <i class="fa-solid fa-book-bookmark pe-2"></i>Site Name
+              </h6></label
+            >
+            <input
+              type="text"
+              oninput="validate(this)"
+              class="form-control"
+              id="bookName"
+              placeholder="Bookmark Name"
+            />
+          </div>
+          <div
+            class="url d-flex flex-column flex-column justify-content-center w-100"
+          >
+            <label for="bookUrl" class="pb-2 fw-semibold"
+              ><h6><i class="fa-solid fa-link pe-2"></i>Site URL</h6></label
+            >
+            <input
+              type="text"
+              oninput="validate(this)"
+              class="form-control"
+              id="bookUrl"
+              placeholder="Website URL"
+            />
+          </div>
+
+          <button
+            class="btn submit text-white px-5"
+            onsubmit="return checkURL()"
+            onclick="addProduct()"
+          >
+            Submit
+          </button>
+          <div class="alert alert-warning d-none" id="alert">
+            follow the rules
+          </div>
+        </div>
+        <table class="bg-light mt-4 text-center w-100">
+          <thead>
+            <tr>
+              <th class="text-capitalize p-2">index</th>
+              <th class="text-capitalize p-2">Website Name</th>
+              <th class="text-capitalize p-2">Visit</th>
+              <th class="text-capitalize p-2">Delete</th>
+            </tr>
+          </thead>
+          <tbody
+            id="bookTableBody"
+            class="border-light border-opacity-50"
+          ></tbody>
+        </table>
+      </div>
+    </main>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script src="main.js"></script>
+  </body>
+</html>
